@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class LblApplicationTests {
 
 	@Test
-	public void contextLoads() {
+	public void testEvents() throws Exception {
+		WSClient wsClient = new WSClient();
+		//wsClient.listenToEvents();
 	}
 
 }
