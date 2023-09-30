@@ -10,4 +10,4 @@
 
 ### You shall be able to see now all the logs indexed on the server console for the specified contract
 
-(https://github.com/DragosDubolari/tsb_backend_test/tree/main/src/main/resources/screens/log_events_example.jpg "Events example")
+![alt text](https://github.com/DragosDubolari/tsb_backend_test/tree/main/src/main/resources/screens/log_events_example.jpg)
