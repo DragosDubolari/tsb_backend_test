@@ -14,8 +14,8 @@ import static com.tsb.lbl.AppConstants.INFURA_WS_ADDRESS;
  * {@link Configuration} class which takes the responsibility to build the {@link Web3j} bean and configure WS connectivity to the Infura network.
  * */
 @Configuration
-public class Web3Launcher {
-    private static final Logger LOGGER = LoggerFactory.getLogger(Web3Launcher.class);
+public class Web3Provider {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Web3Provider.class);
     @Bean
     public Web3j init() {
         LOGGER.info("Initializing Web3j Websocket");
@@ -26,6 +26,7 @@ public class Web3Launcher {
             LOGGER.error("Web3j WS failed during init " + e.getMessage());
             throw new RuntimeException(e);
         }
+        LOGGER.info("Finished initializing Web3j Websocket");
         return Web3j.build(webSocketService);
     }
 }
