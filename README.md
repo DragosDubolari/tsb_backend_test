@@ -1,4 +1,4 @@
-# Simple Blockchain Listener
+# Simple Blockchain Events Listener
 
 ### This is a lightweight spring-boot web-app to show how to use Web3j (Java based Web3 library) in order to listen on the latest events for a deployed blockchain contract.
 
