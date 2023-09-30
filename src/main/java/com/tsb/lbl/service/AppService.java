@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.methods.request.EthFilter;
+
+import javax.annotation.PreDestroy;
+
 /**
  * {@link Service} contains the main logic for listening and indexing contract events on spring-boot app startup.
  * For simplicity, all the logs are indexed to the server console, however it can be extended to store events in a database or read/route the events to
@@ -33,9 +36,17 @@ public class AppService {
                 DefaultBlockParameterName.LATEST,
                 AppConstants.CONTRACT_ADDRESS
         );
+        LOGGER.info("Start Listening to events...");
         web3j.ethLogFlowable(ethFilter).subscribe(
                 log -> LOGGER.info("Event message received " + log),
                 throwable -> LOGGER.error("Error on receiving event message " + throwable.getMessage())
         );
+    }
+
+    //Shutdown client silently on app exit
+    @PreDestroy
+    public void shutDown() {
+        LOGGER.info("Shutting down Web3j Client");
+        web3j.shutdown();
     }
 }
