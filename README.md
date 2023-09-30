@@ -8,5 +8,5 @@
 #### After changes are made, Run the spring-boot app
 > ./mvnw spring-boot:run
 
-### You shall be able to see now all the logs indexed on the server console for the specified contract
+### Latest events will be indexed on the server console for the specified contract
 ![Screenshot](https://github.com/DragosDubolari/tsb_backend_test/blob/main/src/main/resources/screens/log_events_example.jpg)
